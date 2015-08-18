@@ -15,7 +15,7 @@ systems({
     shell: "/bin/bash",
 
     command: "npm start",
-    wait: 20,
+    wait: { retry: 30, timeout: 1000 },
     mounts: {
       "/azk/#{manifest.dir}": path("."),
       "/azk/node_modules": persistent("#{manifest.dir}/node_modules"),
@@ -46,7 +46,7 @@ systems({
   mongo: {
     image : { docker: "azukiapp/mongodb" },
     scalable: false,
-    wait: 60,
+    wait: { retry: 60, timeout: 1000 },
     // Mounts folders to assigned paths
     mounts: {
       // equivalent persistent_folders
