@@ -87,10 +87,6 @@ systems({
     scalable: {"default": 0, "limit": 0},
 
     envs: {
-
-      // need this big because we have to build nokogiri
-      BOX_SIZE: '2gb',
-
       GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'azkfile',
       AZK_RESTART_COMMAND: 'azk restart -Rvv',
       RUN_SETUP: 'true',
